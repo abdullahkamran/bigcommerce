@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { BuilderComponent } from '@builder.io/react';
+import { Builder } from '@builder.io/react';
+import { ProductCollection } from './components/ProductCollection';
+import { CatchallPage } from './components/CatchallPage';
 
-const API_KEY = '04b51d2e22f1437784150b8f813aa7b4';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
             <Link to="/topics">Topics</Link>
           </li>
           <li>
-            <Link to="/page-1">Builder Page 1</Link>
+            <Link to="/products">Builder Page 1</Link>
           </li>
           <li>
             <Link to="/page-2">Builder Page 2</Link>
@@ -52,28 +53,13 @@ function About() {
   );
 }
 
-class CatchallPage extends React.Component {
-  state = { notFound: false };
 
-  render() {
-    return !this.state.notFound ? (
-      <BuilderComponent
-        apiKey={API_KEY}
-        model="page"
-        contentLoaded={content => {
-          if (!content) {
-            this.setState({ notFound: true });
-          }
-        }}
-      >
-        <div className="loading">Loading...</div>
-      </BuilderComponent>
-    ) : (
-      <NotFound />
-    );
-  }
-}
 
-const NotFound = () => <h1>No page found for this URL, did you publish it?</h1>;
+
+Builder.registerComponent(ProductCollection, {
+  name: 'ProductCollection',
+  inputs: [{ name: 'title', type: 'text' }],
+});
+
 
 export default App;
