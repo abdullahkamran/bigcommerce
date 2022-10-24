@@ -1,27 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export const ProductBox = ({ product }) => {
+  const [description, setDescription] = useState();
   useEffect(() => {
-    console.log(product)
+    if(product && product.data) {
+      setDescription(product.data.data)  
+    }
+    //setDescription(product ? product.data ? product.data.data ? product.data.data : {} : {} : {})
   }, [product])
   return (
     <>
       <div>
         <p>
           <b>Name: </b>
-          {product.data.data.name}
+          {description ? description.name || "" : ""}
         </p>
         <p>
           <b>Description: </b>
-          {product.data.data.description}
+          {description ? description.description || "" : ""}
         </p>
         <p>
           <b>Availability: </b>
-          {product.data.data.availability}
+          {description ? description.availability || "" : ""}
         </p>
         <p>
           <b>Price: </b>
-          {product.data.data.price}
+          {description ? description.price || "" : ""}
         </p>
       </div>
     </>

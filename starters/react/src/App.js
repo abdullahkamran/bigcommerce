@@ -2,8 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Builder } from '@builder.io/react';
 import { ProductBox } from './components/ProductBox';
-import { CatchallPage } from './components/CatchallPage';
-
+import CatchAllRoute from './components/CatchAllRoute';
 
 function App() {
   return (
@@ -31,7 +30,7 @@ function App() {
 
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
-        <Route render={({ location }) => <CatchallPage key={location.key} />} />
+        <Route render={({ location }) => <CatchAllRoute key={location.key} />} />
       </div>
     </Router>
   );
