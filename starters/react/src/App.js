@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Builder } from '@builder.io/react';
-import { ProductCollection } from './components/ProductCollection';
+import { ProductBox } from './components/ProductBox';
 import { CatchallPage } from './components/CatchallPage';
 
 
@@ -20,7 +20,7 @@ function App() {
             <Link to="/topics">Topics</Link>
           </li>
           <li>
-            <Link to="/products">Builder Page 1</Link>
+            <Link to="/product">Builder Page 1</Link>
           </li>
           <li>
             <Link to="/page-2">Builder Page 2</Link>
@@ -56,9 +56,14 @@ function About() {
 
 
 
-Builder.registerComponent(ProductCollection, {
-  name: 'ProductCollection',
-  inputs: [{ name: 'title', type: 'text' }],
+Builder.registerComponent(ProductBox, {
+  name: 'ProductBox',
+  inputs: [
+    {
+      name: 'product',
+      type: 'BigCommerceProductPreview',
+    },
+  ],
 });
 
 

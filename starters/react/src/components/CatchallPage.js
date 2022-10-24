@@ -1,7 +1,7 @@
 import { BuilderComponent } from '@builder.io/react';
 import React from 'react';
 
-const API_KEY = '04b51d2e22f1437784150b8f813aa7b4';
+const API_KEY = 'b4b3c36f4db5465089e9b4f9fbed8266';
 
 export class CatchallPage extends React.Component {
     state = { notFound: false };
