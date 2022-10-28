@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BuilderComponent, builder } from "@builder.io/react";
 
-builder.init("b4b3c36f4db5465089e9b4f9fbed8266");
+builder.init("bbe593c535184b168851afb4515fb5ae");
 
 export default function CatchAllRoute() {
   const [notFound, setNotFound] = useState(false);

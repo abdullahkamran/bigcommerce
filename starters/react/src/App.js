@@ -60,7 +60,7 @@ Builder.registerComponent(ProductBox, {
   inputs: [
     {
       name: 'product',
-      type: 'BigCommerceProductPreview',
+      type: 'BigCommerceProduct',
     },
   ],
 });
